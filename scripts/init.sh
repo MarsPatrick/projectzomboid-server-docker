@@ -29,6 +29,9 @@ fi
 # Configure memory settings
 configure_memory
 
+# Append extra VM args if specified
+configure_vm_args
+
 # shellcheck disable=SC2317
 term_handler() {
     if ! shutdown_server; then
