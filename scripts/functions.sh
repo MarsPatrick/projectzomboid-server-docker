@@ -56,6 +56,8 @@ install() {
     exit 1
   fi
 
+  chmod +x /project-zomboid/start-server.sh /project-zomboid/ProjectZomboid64 2>/dev/null
+
   LogSuccess "Server install complete"
 }
 
