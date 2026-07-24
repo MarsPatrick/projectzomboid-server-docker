@@ -65,6 +65,7 @@ ENV HOME=/home/steam \
     DEFAULT_PORT=16261 \
     UDP_PORT=16262 \
     RCON_PORT=27015 \
+    MAX_PLAYERS=32 \
     SERVER_NAME=pzserver \
     STEAM_VAC=true \
     USE_STEAM=true \
