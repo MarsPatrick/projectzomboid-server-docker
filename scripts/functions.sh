@@ -57,6 +57,8 @@ install() {
   fi
 
   chmod +x /project-zomboid/start-server.sh /project-zomboid/ProjectZomboid64 2>/dev/null
+  find /project-zomboid/jre64/bin /project-zomboid/jre/bin \
+    -type f -exec chmod +x {} + 2>/dev/null
 
   LogSuccess "Server install complete"
 }
