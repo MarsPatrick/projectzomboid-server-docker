@@ -27,18 +27,13 @@ Eat lag for breakfast
 | RAM      | 4GB     | Recommend over 8GB for stable operation |
 | Storage  | 5GB     | 10GB                                    |
 
-> [!NOTE]
-> **Build 42 Support**: To use Project Zomboid's latest Build 42 Unstable branch,
-> set `SERVER_BRANCH=unstable` in your .env file. Leave empty or unset for the
-> stable branch.
-
 ## How to use
 
 Copy the .env.example file to a new file called .env file. Then use either `docker compose` or `docker run`
 
 > [!IMPORTANT]
 > Please make sure to change the following in the .env:
-> PASSWORD/RCON_PASSWORD/ADMIN_USERNAME/ADMIN_PASSWORD
+> RCON_PASSWORD/ADMIN_USERNAME/ADMIN_PASSWORD
 
 ### Docker compose
 
@@ -55,8 +50,6 @@ services:
       - 16261:16261/udp
       - 16262:16262/udp
       - 27015:27015/tcp
-    environment:
-      GENERATE_SETTINGS: true
     env_file:
       - .env
     volumes:
@@ -80,10 +73,9 @@ docker run -d \
     -p 16261:16261/udp \
     -p 16262:16262/udp \
     -p 27015:27015/tcp \
-    -e GENERATE_SETTINGS=true \
     --env-file .env \
     -v ./server-files:/project-zomboid \
-    -v ./server-data:/project-zomboid-config
+    -v ./server-data:/project-zomboid-config \
     indifferentbroccoli/projectzomboid-server-docker
 ```
 
@@ -93,9 +85,10 @@ The following environment variables control server behaviour:
 
 | Variable                                          | Default                                                                                       | Info                                                                                                                                                |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| ADMIN_USERNAME                                    |                                                                                               | Admin username                                                                                                                                      |
+| PUID                                              | 1000                                                                                          | User ID the server runs as. Required.                                                                                                               |
+| PGID                                              | 1000                                                                                          | Group ID the server runs as. Required.                                                                                                              |
+| ADMIN_USERNAME                                    | admin                                                                                         | Admin username                                                                                                                                      |
 | ADMIN_PASSWORD                                    | CHANGEME                                                                                      | Admin password. Please change this before starting the server.                                                                                      |
-| PASSWORD                                          |                                                                                               | Server password                                                                                                                                     |
 | RCON_PASSWORD                                     |                                                                                               | RCON password                                                                                                                                       |
 | RCON_PORT                                         | 27015                                                                                         | The port for the RCON (Remote Console)                                                                                                              |
 | SERVER_NAME                                       | pzserver                                                                                      | Name of the server/map                                                                                                                              |
@@ -104,8 +97,11 @@ The following environment variables control server behaviour:
 | MAX_PLAYERS                                       | 32                                                                                            | Maximum number of players that can be on the server at one time.                                                                                    |
 | MEMORY_XMX_GB                                     | 8                                                                                             | Server maximum memory allocation in GB. Sets -Xmx in ProjectZomboid64.json                                                                         |
 | MEMORY_XMS_GB                                     |                                                                                               | Optional: Server initial memory allocation in GB. Sets -Xms in ProjectZomboid64.json. If not specified, only -Xmx is configured                    |
+| VM_ARGS                                           |                                                                                               | Optional: extra JVM args (comma-separated) appended to vmArgs in ProjectZomboid64.json.                                                             |
 | UPDATE_ON_START                                   | true                                                                                          | If set to false, skips downloading and validating server files from Steam on startup. The server will always be installed if start-server.sh is missing. |
-| SERVER_BRANCH                                     | ""                                                                                            | Steam branch to install. Set to "unstable" for Build 42 Unstable branch, or leave empty for stable.                                                 |
+| SERVER_BRANCH                                     | ""                                                                                            | Steam branch to install (e.g. "unstable" for Build 42 Unstable, "legacy41" for Build 41). Leave empty for the default public branch.                |
+| STEAM_VAC                                         | true                                                                                          | Enable Steam VAC anti-cheat.                                                                                                                        |
+| USE_STEAM                                         | true                                                                                          | Whether the server is Steam-enabled.                                                                                                                |
 
 ## Configuration Files
 
@@ -138,25 +134,5 @@ You can build the image from the Dockerfile using the following command:
 ```bash
 docker build -t indifferentbroccoli/projectzomboid-server-docker .
 ```
-
-### Scripts
-
-#### init.sh
-
-Entrypoint of the container. This script will check if the server is installed and if not, it will install it.
-Also has a term_handler function to catch SIGTERM signals to gracefully stop the server.
-Features basic checks that will confirm if the server can be started.
-
-#### start.sh
-
-Starts the server with the settings from the .env file.
-
-#### install.scmd
-
-Installs the server. This script will download the server files using SteamCMD and extract them to the server directory.
-
-#### funtions.sh
-
-Contains functions that are used in the other scripts.
 
 
