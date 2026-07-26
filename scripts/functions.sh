@@ -46,7 +46,7 @@ install() {
 
   if [ -n "${SERVER_BRANCH}" ]; then
     LogInfo "Installing branch: ${SERVER_BRANCH}"
-    args+=(-beta "${SERVER_BRANCH}")
+    args+=(-branch "${SERVER_BRANCH}")
   else
     LogInfo "Installing stable branch"
   fi
