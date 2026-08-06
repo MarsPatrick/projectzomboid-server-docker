@@ -762,6 +762,12 @@ SandboxVars = {
     GeneratorTileRange = 20,
     -- How many levels both above and below a generator it can provide with electricity. Min: 1 Max: 15 Default: 3
     GeneratorVerticalPowerRange = 3,
+    NavigatorForceOpenMap = false,
+    NavigatorEnableResolverDebug = false,
+    NavigatorEnableRouteDataRegeneration = false,
+    VRO_EnableEngineRebuild = false,
+    VRO_UseVanillaFixingRecipes = false,
+    VRO_EnableFullVehicleSalvaging = true,
     Basement = {
         -- How frequently basements spawn at random locations. Default = Sometimes
         -- 1 = Never
@@ -1016,5 +1022,847 @@ SandboxVars = {
         Butchering = 1.0,
         -- Rate at which Glassmaking skill levels up. Min: 0.00 Max: 1000.00 Default: 1.00
         Glassmaking = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        Efficiency = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        LearningReading = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        Toughness = 1.0,
+    },
+    SVUC = {
+        -- Min: 10 Max: 50 Default: 15
+        timeLight = 15,
+        -- Min: 10 Max: 50 Default: 30
+        timeHeavy = 30,
+        -- Min: 10 Max: 50 Default: 45
+        timeReinforced = 45,
+        -- Min: 10 Max: 50 Default: 15
+        timeMods = 15,
+        -- Min: 10 Max: 50 Default: 15
+        timeWheels = 15,
+        -- Min: 50 Max: 80 Default: 80
+        protectionHealthTriger = 80,
+        -- Min: 1 Max: 10 Default: 5
+        protectionLightHealthDelta = 5,
+        -- Min: 1 Max: 10 Default: 4
+        protectionHeavyHealthDelta = 4,
+        -- Min: 1 Max: 10 Default: 3
+        protectionReinforcedHealthDelta = 3,
+        -- Min: 1 Max: 10 Default: 6
+        protectionBullbarSmallHealthDelta = 6,
+        -- Min: 1 Max: 10 Default: 5
+        protectionBullbarMediumHealthDelta = 5,
+        -- Min: 1 Max: 10 Default: 4
+        protectionBullbarLargeHealthDelta = 4,
+        -- Min: 1 Max: 10 Default: 3
+        protectionPlowHealthDelta = 3,
+        -- Min: 1 Max: 10 Default: 1
+        protectionWheelsHealthDelta = 1,
+        -- Min: 0 Max: 50 Default: 10
+        protectionEngineSmallPowerIncrease = 10,
+        -- Min: 0 Max: 50 Default: 20
+        protectionEngineMediumPowerIncrease = 20,
+        -- Min: 0 Max: 50 Default: 35
+        protectionEngineLargePowerIncrease = 35,
+        -- Min: 0 Max: 50 Default: 50
+        protectionEnginePipedPowerIncrease = 50,
+        -- Min: 0 Max: 50 Default: 15
+        protectionEngineSnorkelPowerIncrease = 15,
+        -- Min: 0 Max: 100 Default: 10
+        protectionLightGasUsage = 10,
+        -- Min: 0 Max: 100 Default: 20
+        protectionHeavyGasUsage = 20,
+        -- Min: 0 Max: 100 Default: 40
+        protectionReinforcedGasUsage = 40,
+        -- Min: 0 Max: 100 Default: 0
+        protectionModsGasUsage = 0,
+        -- Min: 0 Max: 100 Default: 1
+        protectionBullbarSmallGasUsage = 1,
+        -- Min: 0 Max: 100 Default: 5
+        protectionBullbarMediumGasUsage = 5,
+        -- Min: 0 Max: 100 Default: 10
+        protectionBullbarLargeGasUsage = 10,
+        -- Min: 0 Max: 100 Default: 20
+        protectionPlowGasUsage = 20,
+        -- Min: 0 Max: 100 Default: 2
+        protectionEngineSmallGasUsage = 2,
+        -- Min: 0 Max: 100 Default: 3
+        protectionEngineMediumGasUsage = 3,
+        -- Min: 0 Max: 100 Default: 4
+        protectionEngineLargeGasUsage = 4,
+        -- Min: 0 Max: 100 Default: 5
+        protectionEnginePipedGasUsage = 5,
+        -- Min: 0 Max: 100 Default: 1
+        protectionEngineSnorkelGasUsage = 1,
+    },
+    BCR = {
+        -- Min: 2 Max: 10000 Default: 1000
+        BodyCount = 1000,
+        enableDebugLogging = false,
+        enablePositiveTraits = true,
+        enableNegativeTraits = true,
+        rewardPriority = 1,
+        grantMissedOpportunities = false,
+        MilestoneScaling = 1,
+        -- Min: 0.10 Max: 2.00 Default: 0.50
+        ProgressiveScalingFactor = 0.5,
+        allow_base_SpeedDemon = true,
+        allow_base_NightVision = true,
+        allow_base_Dextrous = true,
+        allow_base_FastReader = true,
+        allow_base_Inventive = true,
+        allow_base_LightEater = true,
+        allow_base_LowThirst = true,
+        allow_base_Outdoorsman = true,
+        allow_base_NeedsLessSleep = true,
+        allow_base_IronGut = true,
+        allow_base_AdrenalineJunkie = true,
+        allow_base_EagleEyed = true,
+        allow_base_Graceful = true,
+        allow_base_Inconspicuous = true,
+        allow_base_Nutritionist = true,
+        allow_base_Organized = true,
+        allow_base_Resilient = true,
+        allow_base_FastHealer = true,
+        allow_base_FastLearner = true,
+        allow_base_KeenHearing = true,
+        allow_base_ThickSkinned = true,
+        allow_base_HighThirst = true,
+        allow_base_SundayDriver = true,
+        allow_base_AllThumbs = true,
+        allow_base_Clumsy = true,
+        allow_base_Cowardly = true,
+        allow_base_SlowReader = true,
+        allow_base_SlowHealer = true,
+        allow_base_WeakStomach = true,
+        allow_base_Smoker = true,
+        allow_base_Agoraphobic = true,
+        allow_base_Claustrophobic = true,
+        allow_base_Conspicuous = true,
+        allow_base_HeartyAppetite = true,
+        allow_base_Pacifist = true,
+        allow_base_ProneToIllness = true,
+        allow_base_NeedsMoreSleep = true,
+        allow_base_Asthmatic = true,
+        allow_base_Hemophobic = true,
+        allow_base_Disorganized = true,
+        allow_base_SlowLearner = true,
+        allow_base_Illiterate = true,
+        allow_base_ThinSkinned = true,
+    },
+    UnifiedCarryWeightFramework = {
+        CapWeight = true,
+        GatherDetailedDebug = false,
+    },
+    MoreTraits = {
+        -- Min: 1 Max: 999 Default: 4
+        PreparedMedicalBandageAmount = 4,
+        PreparedCarGasToggle = true,
+        InjuredBurns = true,
+        AlcoholicFreeDrink = true,
+        SmokerStart = true,
+        -- Min: 0 Max: 200 Default: 100
+        LuckImpact = 100,
+        -- Min: 1 Max: 720 Default: 24
+        AlcoholicFrequency = 24,
+        -- Min: 1 Max: 720 Default: 72
+        AlcoholicWithdrawal = 72,
+        -- Min: 0 Max: 90 Default: 75
+        SpecializationXPPercent = 75,
+        -- Min: 1 Max: 100 Default: 5
+        BouncerEffectiveness = 5,
+        -- Min: 1 Max: 240 Default: 60
+        BouncerCooldown = 60,
+        -- Min: 0.25 Max: 5.00 Default: 1.75
+        BouncerDistance = 1.75,
+        -- Min: 100 Max: 1000 Default: 200
+        GymGoerPercent = 200,
+        GymGoerNoExerciseFatigue = true,
+        IndefatigableOneUse = true,
+        -- Min: 7 Max: 30 Default: 7
+        IndefatigableRecharge = 7,
+        -- Min: 0 Max: 1000 Default: 100
+        GordaniteEffectiveness = 100,
+        -- Min: 25 Max: 1000 Default: 100
+        MartialScaling = 100,
+        BatteringRamMartialCombo = true,
+        -- Min: 0 Max: 100 Default: 33
+        EvasiveChance = 33,
+        EvasiveAnimation = true,
+        EvasiveBlocksPVP = false,
+        -- Min: 100 Max: 10000 Default: 2000
+        ButterfingersChance = 2000,
+        -- Min: 0.10 Max: 100.00 Default: 1.00
+        GraveRobberChance = 1.0,
+        -- Min: 0 Max: 10 Default: 1
+        GraveRobberGuaranteedLoot = 1,
+        -- Min: 1 Max: 100 Default: 20
+        ScroungerChance = 20,
+        -- Min: 1 Max: 100 Default: 10
+        ScroungerItemChance = 10,
+        -- Min: 10 Max: 1000 Default: 30
+        ScroungerLootModifier = 30,
+        -- Min: 1 Max: 100 Default: 10
+        IncomprehensiveChance = 10,
+        -- Min: 1 Max: 100 Default: 33
+        VagabondChance = 33,
+        -- Min: 0 Max: 10 Default: 1
+        VagabondGuaranteedExtraLoot = 1,
+        -- Min: 1 Max: 100 Default: 10
+        WeightPackMule = 10,
+        -- Min: 1 Max: 100 Default: 6
+        WeightPackMouse = 6,
+        -- Min: 1 Max: 100 Default: 8
+        WeightDefault = 8,
+        -- Min: -100 Max: 100 Default: 0
+        WeightGlobalMod = 0,
+        -- Min: 0 Max: 100 Default: 50
+        QuickWorkerScaler = 50,
+        -- Min: 0 Max: 100 Default: 50
+        SlowWorkerScaler = 50,
+        IngenuitiveLimit = false,
+        -- Min: 5 Max: 95 Default: 50
+        IngenuitiveLimitAmount = 50,
+        -- Min: 0.00 Max: 10.00 Default: 2.00
+        UnwaveringDamageBoost = 2.0,
+        MartialWeapons = false,
+        -- Min: 100 Max: 10000 Default: 1500
+        AntiqueChance = 1500,
+        AntiqueAnywhere = false,
+        ForgivingDeprived = false,
+        NonlethalAlcoholic = false,
+        -- Min: 1 Max: 30 Default: 14
+        SecondWindCooldown = 14,
+        -- Min: 5 Max: 50 Default: 25
+        HardyEndurance = 25,
+        -- Min: 5 Max: 60 Default: 10
+        SuperImmuneMinDays = 10,
+        -- Min: 5 Max: 60 Default: 30
+        SuperImmuneMaxDays = 30,
+        SuperImmuneFirstInfectionBonus = true,
+        SuperImmuneWeakness = false,
+        QuickSuperImmune = false,
+        -- Min: 0 Max: 100 Default: 25
+        ImmunoChance = 25,
+        ProwessGunsAmmoRestore = true,
+        HoarderCompatibility = true,
+        BurnedFireAversion = true,
+        -- Min: 5 Max: 50 Default: 20
+        BurnedDistance = 20,
+        -- Min: 1 Max: 10 Default: 1
+        BurnedPanic = 1,
+        -- Min: 1 Max: 10 Default: 1
+        BurnedStress = 1,
+        -- Min: 0.00 Max: 5.00 Default: 0.75
+        FastSprint = 0.75,
+        -- Min: 0.00 Max: 5.00 Default: 0.50
+        FastRunning = 0.5,
+        -- Min: 0.00 Max: 5.00 Default: 0.25
+        FastWalking = 0.25,
+        -- Min: -5.00 Max: 0.00 Default: -0.25
+        GimpSprint = -0.25,
+        -- Min: -5.00 Max: 0.00 Default: -0.50
+        GimpRunning = -0.5,
+        -- Min: -5.00 Max: 0.00 Default: -0.75
+        GimpWalking = -0.75,
+        allow_ToadTraits_gunspecialist = true,
+        allow_ToadTraits_swift = true,
+        allow_ToadTraits_ingenuitive = true,
+        allow_ToadTraits_generator = true,
+        allow_ToadTraits_olympian = true,
+        allow_ToadTraits_bouncer = true,
+        allow_ToadTraits_martial = true,
+        allow_ToadTraits_flexible = true,
+        allow_ToadTraits_grunt = true,
+        allow_ToadTraits_quiet = true,
+        allow_ToadTraits_tinkerer = true,
+        allow_ToadTraits_scrapper = true,
+        allow_ToadTraits_wildsman = true,
+        allow_ToadTraits_natural = true,
+        allow_ToadTraits_bladetwirl = true,
+        allow_ToadTraits_blunttwirl = true,
+        allow_ToadTraits_scrounger = true,
+        allow_ToadTraits_antique = true,
+        allow_ToadTraits_evasive = true,
+        allow_ToadTraits_blissful = true,
+        allow_ToadTraits_gordanite = true,
+        allow_ToadTraits_indefatigable = true,
+        allow_ToadTraits_hardy = true,
+        allow_ToadTraits_problunt = true,
+        allow_ToadTraits_problade = true,
+        allow_ToadTraits_progun = true,
+        allow_ToadTraits_prospear = true,
+        allow_ToadTraits_actionhero = true,
+        allow_ToadTraits_thickblood = true,
+        allow_ToadTraits_expertdriver = true,
+        allow_ToadTraits_superimmune = true,
+        allow_ToadTraits_packmule = true,
+        allow_ToadTraits_graverobber = true,
+        allow_ToadTraits_gourmand = true,
+        allow_ToadTraits_gymgoer = true,
+        allow_ToadTraits_leadfoot = true,
+        allow_ToadTraits_vagabond = true,
+        allow_ToadTraits_quickworker = true,
+        allow_ToadTraits_batteringram = true,
+        allow_ToadTraits_fitted = true,
+        allow_ToadTraits_tavernbrawler = true,
+        allow_ToadTraits_secondwind = true,
+        allow_ToadTraits_restfulsleeper = true,
+        allow_ToadTraits_noxpshooter = true,
+        allow_ToadTraits_noxptechnician = true,
+        allow_ToadTraits_noxpaxe = true,
+        allow_ToadTraits_noxpfirstaid = true,
+        allow_ToadTraits_noxpmaintenance = true,
+        allow_ToadTraits_noxpsneaky = true,
+        allow_ToadTraits_terminator = true,
+        allow_ToadTraits_unwavering = true,
+        allow_ToadTraits_idealweight = true,
+        allow_ToadTraits_quickrest = true,
+        allow_ToadTraits_antigun = true,
+        allow_ToadTraits_noodlelegs = true,
+        allow_ToadTraits_paranoia = true,
+        allow_ToadTraits_packmouse = true,
+        allow_ToadTraits_injured = true,
+        allow_ToadTraits_drinker = true,
+        allow_ToadTraits_broke = true,
+        allow_ToadTraits_butterfingers = true,
+        allow_ToadTraits_incomprehensive = true,
+        allow_ToadTraits_selfdestructive = true,
+        allow_ToadTraits_depressive = true,
+        allow_ToadTraits_badteeth = true,
+        allow_ToadTraits_albino = true,
+        allow_ToadTraits_amputee = true,
+        allow_ToadTraits_poordriver = true,
+        allow_ToadTraits_anemic = true,
+        allow_ToadTraits_immunocompromised = true,
+        allow_ToadTraits_ascetic = true,
+        allow_ToadTraits_fearful = true,
+        allow_ToadTraits_glassbody = true,
+        allow_ToadTraits_slowworker = true,
+        allow_ToadTraits_mundane = true,
+        allow_ToadTraits_deprived = true,
+        allow_ToadTraits_burned = true,
+    },
+    BCRSomewhatTraits = {
+        allow_SWTraits_SWAdaptiveMetabolism = true,
+        allow_SWTraits_SWBouncer = true,
+        allow_SWTraits_SWCompanion = true,
+        allow_SWTraits_SWCompetitiveEater = true,
+        allow_SWTraits_SWCouchDweller = true,
+        allow_SWTraits_SWImmuneResponse = true,
+        allow_SWTraits_SWIronLiver = true,
+        allow_SWTraits_SWManiac = true,
+        allow_SWTraits_SWPacer = true,
+        allow_SWTraits_SWParamedic = true,
+        allow_SWTraits_SWPitCrew = true,
+        allow_SWTraits_SWProductive = true,
+        allow_SWTraits_SWSloth = true,
+        allow_SWTraits_SWSprintDemon = true,
+        allow_SWTraits_SWSquirrel = true,
+        allow_SWTraits_SWTrekker = true,
+        allow_SWTraits_SWAcrophobic = true,
+        allow_SWTraits_SWBrittle = true,
+        allow_SWTraits_SWColdSensitive = true,
+        allow_SWTraits_SWDrunkard = true,
+        allow_SWTraits_SWFlailer = true,
+        allow_SWTraits_SWFlatEarther = true,
+        allow_SWTraits_SWFlimsy = true,
+        allow_SWTraits_SWHeatSensitive = true,
+        allow_SWTraits_SWInjured = true,
+        allow_SWTraits_SWLuddite = true,
+        allow_SWTraits_SWLurcher = true,
+        allow_SWTraits_SWOneTrickPony = true,
+        allow_SWTraits_SWRavenous = true,
+        allow_SWTraits_SWScaredycat = true,
+        allow_SWTraits_SWSundayRunner = true,
+        allow_SWTraits_SWVehophobic = true,
+    },
+    ClearBite = {
+        TreatmentMode = 3,
+        -- Min: 1 Max: 200 Default: 30
+        RequiredDoses = 30,
+        -- Min: 1 Max: 60 Default: 7
+        RequiredDays = 7,
+        -- Min: 0.50 Max: 24.00 Default: 2.00
+        MinimumDoseHours = 2.0,
+        -- Min: 2.00 Max: 72.00 Default: 12.00
+        MaximumGapHours = 12.0,
+        ResetAfterGap = true,
+        -- Min: 0.50 Max: 12.00 Default: 3.00
+        ReliefHours = 3.0,
+        -- Min: 0 Max: 100 Default: 100
+        WithdrawalReliefPercent = 100,
+        -- Min: 0 Max: 100 Default: 25
+        StressReliefPercent = 25,
+        -- Min: 0 Max: 100 Default: 50
+        RelapsePenaltyPercent = 50,
+        -- Min: 0 Max: 50 Default: 3
+        OveruseSickness = 3,
+        -- Min: 2 Max: 10 Default: 3
+        OveruseStartDose = 3,
+        -- Min: 0.00 Max: 3.00 Default: 1.00
+        OveruseEscalation = 1.0,
+        -- Min: 1 Max: 10 Default: 8
+        OveruseMaxLevel = 8,
+        -- Min: 0.00 Max: 10.00 Default: 1.00
+        LootMultiplier = 1.0,
+    },
+    DynamicBackpacks = {
+        KnivesCanRemove = false,
+        -- Min: 0 Max: 10 Default: 1
+        BaseUpgradeSlots = 1,
+        -- Min: -20 Max: 10 Default: 1
+        BackSlotModifier = 1,
+        -- Min: -20 Max: 10 Default: 0
+        FannySlotModifier = 0,
+        -- Min: -20 Max: 10 Default: 0
+        OtherSlotModifier = 0,
+        -- Min: 0 Max: 10 Default: 10
+        TailoringModifier = 10,
+        -- Min: 0.00 Max: 1.00 Default: 0.10
+        ClothCapacityPercentage = 0.1,
+        -- Min: -100 Max: 100 Default: 1
+        ClothCapacityBonus = 1,
+        -- Min: 0.01 Max: 1.00 Default: 0.15
+        ClothReductionPercentage = 0.15,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        ClothLootSpawns = 1.0,
+        -- Min: 0.00 Max: 1.00 Default: 0.20
+        JeanCapacityPercentage = 0.2,
+        -- Min: -100 Max: 100 Default: 1
+        JeanCapacityBonus = 1,
+        -- Min: 0.01 Max: 1.00 Default: 0.25
+        JeanReductionPercentage = 0.25,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        JeanLootSpawns = 1.0,
+        -- Min: 0.00 Max: 1.00 Default: 0.25
+        LeatherCapacityPercentage = 0.25,
+        -- Min: -100 Max: 100 Default: 2
+        LeatherCapacityBonus = 2,
+        -- Min: 0.01 Max: 1.00 Default: 0.35
+        LeatherReductionPercentage = 0.35,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        LeatherLootSpawns = 1.0,
+        -- Min: 0.00 Max: 1.00 Default: 0.35
+        MilitaryCapacityPercentage = 0.35,
+        -- Min: -100 Max: 100 Default: 2
+        MilitaryCapacityBonus = 2,
+        -- Min: 0.01 Max: 1.00 Default: 0.50
+        MilitaryReductionPercentage = 0.5,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        MilitaryLootSpawns = 1.0,
+    },
+    Efficiency = {
+        actionFilter = "ISAddAnimalInTrailer|ISAttachAnimalToPlayer|ISAttachAnimalToTree|ISButcherAnimal|ISCutAnimalOnHook|ISFeedAnimalFromHand|ISGatherBloodFromAnimal|ISGetAnimalBones|ISGiveWaterToAnimal|ISHutchCleanFloor|ISHutchCleanNest|ISHutchGrabAnimal|ISHutchGrabCorpseAction|ISHutchGrabEgg|ISKillAnimal|ISKillAnimalInInventory|ISLureAnimal|ISMilkAnimal|ISOpenAnimalInfo|ISOpenButcherHookUI|ISPetAnimal|ISPickupAnimal|ISPutAnimalInHutch|ISPutAnimalOnHook|ISRemoveAnimalFromHook|ISRemoveAnimalFromTrailer|ISRemoveHeadFromAnimal|ISRemoveLeatherFromAnimal|ISRemoveMeatFromAnimal|ISShearAnimal|ISToggleHutchDoor|ISToggleHutchEggHatchDoor",
+        EnableGrindLimit = true,
+        -- Min: 0.10 Max: 1.00 Default: 0.90
+        GrindLimitIndex = 0.9,
+        -- Min: 1 Max: 100 Default: 10
+        GrindLimitThreshold = 10,
+        -- Min: 5 Max: 1000 Default: 20
+        DefaultTimeLimit = 20,
+        -- Min: 0.10 Max: 10.00 Default: 2.00
+        Level0 = 2.0,
+        -- Min: 0.10 Max: 10.00 Default: 1.80
+        Level1 = 1.8,
+        -- Min: 0.10 Max: 10.00 Default: 1.40
+        Level2 = 1.4,
+        -- Min: 0.10 Max: 10.00 Default: 1.00
+        Level3 = 1.0,
+        -- Min: 0.10 Max: 10.00 Default: 0.90
+        Level4 = 0.9,
+        -- Min: 0.10 Max: 10.00 Default: 0.80
+        Level5 = 0.8,
+        -- Min: 0.10 Max: 10.00 Default: 0.70
+        Level6 = 0.7,
+        -- Min: 0.10 Max: 10.00 Default: 0.60
+        Level7 = 0.6,
+        -- Min: 0.10 Max: 10.00 Default: 0.50
+        Level8 = 0.5,
+        -- Min: 0.10 Max: 10.00 Default: 0.40
+        Level9 = 0.4,
+        -- Min: 0.10 Max: 10.00 Default: 0.30
+        Level10 = 0.3,
+    },
+    GydeTraitMags = {
+        NegativeToPositive = false,
+        ReadRemove = false,
+        ReadDelete = false,
+        -- Min: 0 Max: 8766 Default: 0
+        DaysBeforeRead = 0,
+        SpawnRate = 3,
+        SpawnSpeedDemon = true,
+        SpawnNutritionist = true,
+        SpawnOrganized = true,
+        SpawnOutdoorsman = true,
+        SpawnFastReader = true,
+        SpawnFastLearner = true,
+        SpawnHandy = true,
+        SpawnAxeMan = true,
+        SpawnBurglar = true,
+        SpawnGraceful = true,
+        SpawnDextrous = true,
+        SpawnInconspicuous = true,
+        SpawnKeenHearing = true,
+    },
+    KillCount = {
+        doExport = false,
+        includePostDeathUI = true,
+        -- Min: 0 Max: 10000000 Default: 500
+        MaxUpdateDelay = 500,
+        shareOnServer = true,
+        keepTrackOfDead = true,
+    },
+    MoreTraitsDynamic = {
+        AntiGunActivistDynamic = true,
+        -- Min: 0 Max: 10 Default: 6
+        AntiGunActivistDynamicSkill = 6,
+        -- Min: 0 Max: 100000 Default: 600
+        AntiGunActivistDynamicKill = 600,
+        AntiqueCollectorDynamic = true,
+        -- Min: 0 Max: 10 Default: 10
+        AntiqueCollectorDynamicSkill = 10,
+        AsceticDynamic = true,
+        -- Min: 0 Max: 10 Default: 5
+        AsceticDynamicSkill = 5,
+        BouncerDynamic = true,
+        -- Min: 0 Max: 10 Default: 7
+        BouncerDynamicSmallBlunt = 7,
+        -- Min: 0 Max: 10 Default: 7
+        BouncerDynamicStrength = 7,
+        EvasiveDynamic = true,
+        -- Min: 0 Max: 50 Default: 40
+        EvasiveDynamicSkill = 40,
+        FastDynamic = true,
+        -- Min: 0 Max: 40 Default: 30
+        FastDynamicSkill = 30,
+        FastWorkerDynamic = true,
+        -- Min: 0 Max: 80 Default: 60
+        FastWorkerDynamicSkill = 60,
+        FlexibleDynamic = true,
+        -- Min: 0 Max: 10 Default: 4
+        FlexibleDynamicSkill = 4,
+        GordaniteDynamic = true,
+        -- Min: 0 Max: 10 Default: 6
+        GordaniteDynamicSkill = 6,
+        -- Min: 0 Max: 100000 Default: 300
+        GordaniteDynamicKill = 300,
+        GourmandDynamic = true,
+        -- Min: 0 Max: 10 Default: 9
+        GourmandDynamicSkill = 9,
+        GraverobberDynamic = true,
+        -- Min: 0 Max: 10 Default: 8
+        GraverobberDynamicSkill = 8,
+        -- Min: 0 Max: 100000 Default: 1000
+        GraverobberDynamicKill = 1000,
+        GruntWorkerDynamic = true,
+        -- Min: 0 Max: 10 Default: 4
+        GruntWorkerDynamicSmallBlunt = 4,
+        -- Min: 0 Max: 10 Default: 5
+        GruntWorkerDynamicWoodwork = 5,
+        -- Min: 0 Max: 100000 Default: 200
+        GruntWorkerDynamicKill = 200,
+        GymGoerDynamic = true,
+        -- Min: 0 Max: 20 Default: 14
+        GymGoerDynamicSkill = 14,
+        HardyDynamic = true,
+        -- Min: 0 Max: 10 Default: 7
+        HardyDynamicSkill = 7,
+        IdealWeightDynamic = true,
+        -- Min: 0 Max: 100000 Default: 21
+        IdealWeightDynamicTargetDaysToObtain = 21,
+        -- Min: 0 Max: 100000 Default: 24
+        IdealWeightDynamicObtainGracePeriod = 24,
+        -- Min: 0.00 Max: 100.00 Default: 1.00
+        IdealWeightDynamicLoseGracePeriodMultiplier = 1.0,
+        -- Min: 0 Max: 100000 Default: 18
+        IdealWeightDynamicLoseGracePeriodCap = 18,
+        ImmunocompromisedDynamic = true,
+        -- Min: 0 Max: 100000 Default: 2000
+        ImmunocompromisedDynamicInfectionTime = 2000,
+        IncomprehensiveDynamic = true,
+        -- Min: 0 Max: 10 Default: 4
+        IncomprehensiveDynamicSkill = 4,
+        IndefatigableDynamic = true,
+        -- Min: 0 Max: 120 Default: 110
+        IndefatigableDynamicSkill = 110,
+        LeadFootDynamic = true,
+        -- Min: 0 Max: 50000 Default: 200
+        LeadFootDynamicKill = 200,
+        MartialArtistDynamic = true,
+        -- Min: 0 Max: 10 Default: 6
+        MartialArtistDynamicSmallBlunt = 6,
+        -- Min: 0 Max: 10 Default: 6
+        MartialArtistDynamicFitness = 6,
+        MotionSickenssDynamic = true,
+        -- Min: 0 Max: 10 Default: 5
+        MotionSickenssDynamicSkill = 5,
+        MundaneDynamic = true,
+        -- Min: 0 Max: 500000 Default: 5000
+        MundaneDynamicDamage = 5000,
+        NaturalEaterDynamic = true,
+        -- Min: 0 Max: 10 Default: 2
+        NaturalEaterDynamicCooking = 2,
+        -- Min: 0 Max: 10 Default: 4
+        NaturalEaterDynamicForaging = 4,
+        NoodleLegsDynamic = true,
+        -- Min: 0 Max: 50 Default: 30
+        NoodleLegsDynamicSkill = 30,
+        OlympianDynamic = true,
+        -- Min: 0 Max: 10 Default: 5
+        OlympianDynamicSkillSprinting = 5,
+        -- Min: 0 Max: 10 Default: 6
+        OlympianDynamicSkillFitness = 6,
+        PackMouseDynamic = true,
+        -- Min: 0 Max: 10 Default: 7
+        PackMouseDynamicSkill = 7,
+        PackMuleDynamic = true,
+        -- Min: 0 Max: 10 Default: 9
+        PackMuleDynamicSkill = 9,
+        ParanoiaDynamic = true,
+        -- Min: 0 Max: 100000 Default: 200
+        ParanoiaDynamicHoursLose = 200,
+        PracticedSwordsmanDynamic = true,
+        -- Min: 0 Max: 20 Default: 10
+        PracticedSwordsmanDynamicSkill = 10,
+        -- Min: 0 Max: 100000 Default: 500
+        PracticedSwordsmanDynamicKill = 500,
+        ProwessBladeDynamic = true,
+        -- Min: 0 Max: 30 Default: 24
+        ProwessBladeDynamicSkill = 24,
+        -- Min: 0 Max: 100000 Default: 1200
+        ProwessBladeDynamicKill = 1200,
+        ProwessBluntDynamic = true,
+        -- Min: 0 Max: 20 Default: 16
+        ProwessBluntDynamicSkill = 16,
+        -- Min: 0 Max: 100000 Default: 800
+        ProwessBluntDynamicKill = 800,
+        ProwessGunsDynamic = true,
+        -- Min: 0 Max: 10 Default: 8
+        ProwessGunsDynamicAiming = 8,
+        -- Min: 0 Max: 20 Default: 16
+        ProwessGunsDynamicSkill = 16,
+        -- Min: 0 Max: 100000 Default: 800
+        ProwessGunsDynamicKill = 800,
+        ProwessSpearDynamic = true,
+        -- Min: 0 Max: 10 Default: 8
+        ProwessSpearDynamicSkill = 8,
+        -- Min: 0 Max: 100000 Default: 400
+        ProwessSpearDynamicKill = 400,
+        QuietDynamic = true,
+        -- Min: 0 Max: 10 Default: 4
+        QuietDynamicSkill = 4,
+        ScrapperDynamic = true,
+        -- Min: 0 Max: 10 Default: 5
+        ScrapperDynamicMaintenance = 5,
+        -- Min: 0 Max: 10 Default: 5
+        ScrapperDynamicMetalWelding = 5,
+        ScroungerDynamic = true,
+        -- Min: 0 Max: 10 Default: 6
+        ScroungerDynamicSkill = 6,
+        SecondWindDynamic = true,
+        -- Min: 0 Max: 20 Default: 18
+        SecondWindDynamicSkill = 18,
+        SlowWorkerDynamic = true,
+        -- Min: 0 Max: 80 Default: 30
+        SlowWorkerDynamicSkill = 30,
+        SlowpokeDynamic = true,
+        -- Min: 0 Max: 40 Default: 20
+        SlowpokeDynamicSkill = 20,
+        SwiftDynamic = true,
+        -- Min: 0 Max: 10 Default: 4
+        SwiftDynamicSkill = 4,
+        SuperImmuneDynamic = true,
+        -- Min: 0 Max: 100000 Default: 5000
+        SuperImmuneDynamicInfectionTime = 5000,
+        TavernBrawlerDynamic = true,
+        -- Min: 0 Max: 60 Default: 12
+        TavernBrawlerDynamicSkill = 12,
+        TerminatorDynamic = true,
+        -- Min: 0 Max: 30 Default: 28
+        TerminatorDynamicSkill = 28,
+        -- Min: 0 Max: 100000 Default: 1400
+        TerminatorDynamicKill = 1400,
+        ThuggishDynamic = true,
+        -- Min: 0 Max: 20 Default: 10
+        ThuggishDynamicSkill = 10,
+        -- Min: 0 Max: 100000 Default: 500
+        ThuggishDynamicKill = 500,
+        TinkererDynamic = true,
+        -- Min: 0 Max: 30 Default: 12
+        TinkererDynamicSkill = 12,
+        UnwaveringDynamic = true,
+        -- Min: 0 Max: 100000 Default: 500
+        UnwaveringDynamicCounter = 500,
+        VagabondDynamic = true,
+        -- Min: 0 Max: 10 Default: 5
+        VagabondDynamicSkill = 5,
+        WellFittedDynamic = true,
+        -- Min: 0 Max: 10 Default: 8
+        WellFittedDynamicSkill = 8,
+        WildsmanDynamic = true,
+        -- Min: 0 Max: 30 Default: 8
+        WildsmanDynamicSkill = 8,
+        -- Min: 0 Max: 100000 Default: 200
+        WildsmanDynamicKill = 200,
+    },
+    PhunCure = {
+        DefDropRate = ".1",
+        DefSprinterDropRate = ".1",
+        -- Min: 0 Max: 100 Default: 0
+        ExpiredChance = 0,
+        -- Min: 0 Max: 10000 Default: 4
+        DaysRotten = 4,
+        -- Min: 0 Max: 10000 Default: 1
+        DaysFresh = 1,
+        CureInfection = true,
+        CureWound = true,
+        CureBite = true,
+        CureScratch = true,
+        Debug = false,
+    },
+    WorldPingSystem = {
+        PingVisibilityRange = 2,
+        -- Min: 2 Max: 10 Default: 3
+        PingDuration = 3,
+        PingCooldown = 2,
+        RestrictToFaction = false,
+    },
+    ProximityInventory = {
+        ZombieOnly = false,
+    },
+    RainCleansBlood = {
+        -- Min: 1 Max: 60 Default: 10
+        TilesPerMinute = 10,
+        -- Min: 0.05 Max: 0.95 Default: 0.25
+        WeatherThreshold = 0.25,
+        AlsoCleanAsh = true,
+        AlsoCleanDroppings = true,
+        AlsoCleanInside = false,
+        AlsoCleanVehicles = true,
+        -- Min: 0.10 Max: 1.00 Default: 0.10
+        VehicleCleanSpeed = 0.1,
+        AlsoCleanClothes = true,
+        -- Min: 1.00 Max: 10.00 Default: 1.00
+        ClothesCleanSpeed = 1.0,
+        AlwaysClean = false,
+    },
+    RarityThreads = {
+        -- Min: 0.25 Max: 4.00 Default: 1.00
+        RarityMultiplier = 1.0,
+        AllowDrawbacks = true,
+        RollExistingInventory = true,
+        EnableVirtualStamina = true,
+        DebugLogging = false,
+    },
+    SpareEnginePartsCrafting = {
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputWeld = 20,
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputMech = 20,
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputElec = 20,
+        -- Min: 1 Max: 40 Default: 20
+        EnginePartsOutputSmit = 20,
+    },
+    TanksHavePropane = {
+        AllowGasPumps = false,
+        AllowSmallIndustrialTanks = false,
+        -- Min: 1 Max: 10 Default: 2
+        SearchRadius = 2,
+    },
+    TOC = {
+        -- Min: 1 Max: 10 Default: 1
+        CicatrizationSpeed = 1,
+        -- Min: 0 Max: 5 Default: 1
+        WoundDirtynessMultiplier = 1,
+        -- Min: 1 Max: 3 Default: 2
+        SurgeonAbilityImportance = 2,
+    },
+    Toughness = {
+        AffectsPanic = true,
+        AffectsPain = true,
+        AffectsDiscomfort = true,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        PanicReductionMultiplier = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        PainReductionMultiplier = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        DiscomfortReductionMultiplier = 1.0,
+        -- Min: 0.00 Max: 1000.00 Default: 1.00
+        DiscomfortFlatReductionMultiplier = 1.0,
+    },
+    VFE = {
+        PoliceWeapons = true,
+        MilitaryWeapons = true,
+        SurvivorWeapons = true,
+        OtherWeapons = true,
+        CarWeapons = true,
+        HouseWeapons = true,
+        -- Min: 0.10 Max: 10.00 Default: 1.00
+        HouseWeaponsMulti = 1.0,
+        HeavyWeapons = true,
+        -- Min: 0.10 Max: 10.00 Default: 1.00
+        GunLootMulti = 1.0,
+        LootMilitary = true,
+        LootPolice = true,
+        LootStore = true,
+        LootCriminal = true,
+        LootHunting = true,
+        LootSafehouse = true,
+        RemoveVanillaGuns = false,
+    },
+    ZombieBlood = {
+        -- Min: 1 Max: 180 Default: 50
+        Duration = 50,
+        -- Min: 10 Max: 100 Default: 85
+        Effectiveness = 85,
+        RainRemoves = true,
+        WashRemoves = true,
+        RunningDrainsCamouflage = true,
+        -- Min: 1 Max: 10 Default: 1
+        MaxUsesPerCorpse = 1,
+        -- Min: 10 Max: 300 Default: 80
+        ApplyTime = 80,
+        -- Min: 1.00 Max: 15.00 Default: 5.00
+        CamoRange = 5.0,
+        -- Min: 50 Max: 500 Default: 100
+        StunDuration = 100,
+    },
+    UsefulBarrels = {
+        DebugMode = false,
+        -- Min: 1 Max: 9999 Default: 400
+        BarrelCapacity = 400,
+        RequirePipeWrench = true,
+        RequireHoseForTake = true,
+        RequireFunnelForFill = false,
+        -- Min: 1.00 Max: 2.00 Default: 1.25
+        FunnelSpeedUpFillModifier = 1.25,
+        AllowIndustrial = true,
+        AllowFuel = true,
+        AllowHazardous = true,
+        AllowWater = true,
+        AllowAlcoholic = false,
+        AllowBeverage = false,
+        AllowMedical = false,
+        AllowColors = false,
+        AllowDyes = false,
+        AllowHairDyes = false,
+        AllowPaint = false,
+        AllowPoisons = false,
+        EnableGeneratorRefuel = true,
+        GeneratorRefuelRequiresHose = true,
+        EnableCarRefuel = true,
+        CarRefuelRequiresHose = true,
+        EnableFillBarrelFromVehicles = true,
+        FillBarrelFromVehiclesRequiresHose = true,
+        InitialFluid = true,
+        InitialFluidPool = "Acid Water TaintedWater Petrol Petrol Bleach PotentPoison",
+        -- Min: 0 Max: 9999 Default: 54
+        InitialFluidMaxAmount = 54,
+        -- Min: 0.00 Max: 100.00 Default: 25.00
+        InitialFluidSpawnChance = 25.0,
+        RequireWeldingMask = true,
+        RequireBlowTorch = true,
     },
 }
