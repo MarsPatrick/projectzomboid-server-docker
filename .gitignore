@@ -1,2 +1,6 @@
 projectzomboid/
+server-files/
 .vscode
+server-data/**
+!server-data/Server/
+!server-data/Server/**
