@@ -1865,4 +1865,20 @@ SandboxVars = {
         RequireWeldingMask = true,
         RequireBlowTorch = true,
     },
+    SkillBasedMultihit = {
+        ForceMultiHitEnabled = true,
+        AverageWithStrength = true,
+        ExertionPenalty = true,
+        FatiguePenalty = true,
+        -- Min: 0 Max: 100 Default: 100
+        ChanceCap = 100,
+        -- Min: 0 Max: 100 Default: 50
+        OneHandedPenalty = 50,
+        -- Min: 0 Max: 11 Default: 0
+        StrengthReqFor2 = 0,
+        -- Min: 0 Max: 11 Default: 0
+        StrengthReqFor3 = 0,
+        HitCountOverrides = "",
+        Debug = false,
+    },
 }
