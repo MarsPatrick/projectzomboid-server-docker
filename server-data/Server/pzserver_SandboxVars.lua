@@ -266,7 +266,7 @@ SandboxVars = {
     -- 4 = Sometimes
     -- 5 = Often
     -- 6 = Very Often
-    LockedHouses = 6,
+    LockedHouses = 5,
     -- Spawn with Chips, a Water Bottle, a Small Backpack, a Baseball Bat, and a Hammer.
     StarterKit = false,
     -- Nutritional value of food affects the player's condition. Turning this off will stop the player gaining or losing weight.
@@ -341,7 +341,7 @@ SandboxVars = {
     -- 2 = Once
     -- 3 = Sometimes
     -- 4 = Often
-    Helicopter = 2,
+    Helicopter = 3,
     -- How often zombie-attracting metagame events like distant gunshots will occur. Default = Sometimes
     -- 1 = Never
     -- 2 = Sometimes
@@ -498,7 +498,7 @@ SandboxVars = {
     -- 6 = Full
     InitialGas = 2,
     -- If enabled, gas pumps will never run out of fuel
-    FuelStationGasInfinite = false,
+    FuelStationGasInfinite = true,
     -- The minimum amount of gasoline that can spawn in gas pumps. Check the "Advanced" box below to use a custom amount. Min: 0.00 Max: 1.00 Default: 0.00
     FuelStationGasMin = 0.0,
     -- The maximum amount of gasoline that can spawn in gas pumps. Check the "Advanced" box below to use a custom amount. Min: 0.00 Max: 1.00 Default: 0.80
@@ -562,7 +562,7 @@ SandboxVars = {
     -- 4 = High
     RecentlySurvivorVehicles = 2,
     -- If certain melee weapons will be able to strike multiple zombies in one hit.
-    MultiHitZombies = false,
+    MultiHitZombies = true,
     -- Chance of being bitten when a zombie attacks from behind. Default = High
     -- 1 = Low
     -- 2 = Medium
@@ -765,7 +765,7 @@ SandboxVars = {
     NavigatorForceOpenMap = false,
     NavigatorEnableResolverDebug = false,
     NavigatorEnableRouteDataRegeneration = false,
-    VRO_EnableEngineRebuild = false,
+    VRO_EnableEngineRebuild = true,
     VRO_UseVanillaFixingRecipes = false,
     VRO_EnableFullVehicleSalvaging = true,
     Basement = {
@@ -781,7 +781,7 @@ SandboxVars = {
     },
     Map = {
         -- If enabled, a mini-map window will be available.
-        AllowMiniMap = false,
+        AllowMiniMap = true,
         -- If enabled, the world map can be accessed.
         AllowWorldMap = true,
         -- If enabled, the world map will be completely filled in on starting the game.
@@ -797,7 +797,7 @@ SandboxVars = {
         -- 4 = Random
         Speed = 4,
         -- If Random Speed is enabled, this controls what percentage of zombies are Sprinters. Check the "Advanced" box below to use a custom percentage. Min: 0 Max: 100 Default: 0
-        SprinterPercentage = 0,
+        SprinterPercentage = 1,
         -- The damage zombies inflict per attack. Default = Normal
         -- 1 = Superhuman
         -- 2 = Normal
@@ -1408,7 +1408,7 @@ SandboxVars = {
         LootMultiplier = 1.0,
     },
     DynamicBackpacks = {
-        KnivesCanRemove = false,
+        KnivesCanRemove = true,
         -- Min: 0 Max: 10 Default: 1
         BaseUpgradeSlots = 1,
         -- Min: -20 Max: 10 Default: 1
@@ -1485,9 +1485,9 @@ SandboxVars = {
         Level10 = 0.3,
     },
     GydeTraitMags = {
-        NegativeToPositive = false,
+        NegativeToPositive = true,
         ReadRemove = false,
-        ReadDelete = false,
+        ReadDelete = true,
         -- Min: 0 Max: 8766 Default: 0
         DaysBeforeRead = 0,
         SpawnRate = 3,
@@ -1766,8 +1766,8 @@ SandboxVars = {
         EnginePartsOutputSmit = 20,
     },
     TanksHavePropane = {
-        AllowGasPumps = false,
-        AllowSmallIndustrialTanks = false,
+        AllowGasPumps = true,
+        AllowSmallIndustrialTanks = true,
         -- Min: 1 Max: 10 Default: 2
         SearchRadius = 2,
     },
@@ -1842,14 +1842,14 @@ SandboxVars = {
         AllowFuel = true,
         AllowHazardous = true,
         AllowWater = true,
-        AllowAlcoholic = false,
-        AllowBeverage = false,
-        AllowMedical = false,
-        AllowColors = false,
-        AllowDyes = false,
-        AllowHairDyes = false,
-        AllowPaint = false,
-        AllowPoisons = false,
+        AllowAlcoholic = true,
+        AllowBeverage = true,
+        AllowMedical = true,
+        AllowColors = true,
+        AllowDyes = true,
+        AllowHairDyes = true,
+        AllowPaint = true,
+        AllowPoisons = true,
         EnableGeneratorRefuel = true,
         GeneratorRefuelRequiresHose = true,
         EnableCarRefuel = true,
