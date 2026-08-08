@@ -706,7 +706,7 @@ SandboxVars = {
     -- 4 = 1 point penalty for every negative trait selected after the first
     NegativeTraitsPenalty = 1,
     -- The number of in-game minutes it takes to read one page of a skill book. Min: 0.00 Max: 60.00 Default: 2.00
-    MinutesPerPage = 2.0,
+    MinutesPerPage = 1.5,
     -- When enabled, crops and herbs grown inside buildings will die. Does not affect houseplants.
     KillInsideCrops = true,
     -- When enabled, the growth of plants is affected by seasons.
@@ -728,9 +728,9 @@ SandboxVars = {
     -- How long it takes for Maximum Diminished Loot Percentage to be reached. Min: 0 Max: 3650 Default: 3650
     DaysUntilMaximumDiminishedLoot = 3650,
     -- Functions as a multiplier when applying muscle strain from swinging weapons or carrying heavy loads. Min: 0.00 Max: 10.00 Default: 0.70
-    MuscleStrainFactor = 0.7,
+    MuscleStrainFactor = 0.5,
     -- Functions as a multiplier when applying discomfort from worn items. Min: 0.00 Max: 10.00 Default: 0.80
-    DiscomfortFactor = 0.8,
+    DiscomfortFactor = 0.3,
     -- If greater than zero damage can be taken from serious wound infections. Min: 0.00 Max: 10.00 Default: 1.00
     WoundInfectionFactor = 1.0,
     -- If true clothing with randomized tints will not be so dark to be virtually black.

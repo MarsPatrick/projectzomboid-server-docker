@@ -12,5 +12,5 @@ services:
     env_file:
       - .env
     volumes:
-      - ./server-files:/project-zomboid
+      - /srv/pz/server-files:/project-zomboid
       - ./server-data:/project-zomboid-config
